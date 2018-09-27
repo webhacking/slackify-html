@@ -1,6 +1,6 @@
 {
-  "name": "slackify-html",
-  "version": "1.0.0",
+  "name": "slackify-html2",
+  "version": "0.0.1",
   "description": "convert simple html to slack markdown",
   "main": "slackify-html.js",
   "scripts": {
