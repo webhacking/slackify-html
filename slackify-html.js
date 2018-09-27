@@ -26,15 +26,25 @@ function walk(dom) {
       if ('tag' === el.type) {
         switch (el.name) {
           case 'a':
-            out += '<' + el.attribs.href + '|' + walk(el.children) + '>';
+            out += '<' + el.attribs.href + '|' + walk(el.children) + '> ';
             break;
           case 'strong':
           case 'b':
-            out += '*' + walk(el.children) + '*';
+            out += '*' + walk(el.children) + '* ';
             break;
           case 'i':
           case 'em':
-            out += '_' + walk(el.children) + '_';
+            out += '_' + walk(el.children) + '_ ';
+            break;
+          case 's':
+            out += '~' + walk(el.children) + '~ ';
+            break;
+          case 'li':
+            out += ' \n - ' + walk(el.children) + ' \n';
+            break;
+          case 'br':
+          case 'Br':
+            out += '\n';
             break;
           default:
             out += walk(el.children);
